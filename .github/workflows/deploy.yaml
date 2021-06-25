@@ -59,8 +59,8 @@ jobs:
           sleep 10
           prutil -r Test_IaC_Helm > /tmp/results
           val=`grep failed /tmp/results`
-          if [ ! -z $val ]; then
-             return 1
+          if [ ! -z "$val" ]; then
+             exit 1
           else
-             return 0
+             exit 0
           fi
