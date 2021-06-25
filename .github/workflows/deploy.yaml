@@ -43,6 +43,7 @@ jobs:
           echo "spaceid = ${{ secrets.spaceid }}" >> $HOME/.prancer/config
           echo "customer = ${{ secrets.customer }}" >> $HOME/.prancer/config
           prutil -a view
+          cat $HOME/.prancer/config
           # Export username and password to get token
           export ENTCLI_KEY=${{ secrets.username }}
           export ENTCLI_SECRET='${{ secrets.password }}'
