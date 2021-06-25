@@ -47,8 +47,8 @@ jobs:
           prutil -a view
           cat $HOME/.prancer/config
           # Export username and password to get token
-          export ENTCLI_KEY=${{ secrets.username }}
-          export ENTCLI_SECRET= "${{ secrets.password }}"
+          # export ENTCLI_KEY=${{ secrets.username }}
+          # export ENTCLI_SECRET= "${{ secrets.password }}"
           # Get the token
           prutil -u ${{ secrets.username }} -p "${{ secrets.password }}" -l
           # Crawl the collection
