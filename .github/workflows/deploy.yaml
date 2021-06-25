@@ -36,6 +36,8 @@ jobs:
           pip install prancer_cli
           #. Create initial configuration file
           prutil -a create
+          echo "Home: $HOME"
+          ls -l $HOME/.prancer/config
           prutil -a view
           # Update the config file with customer, url and customer
           echo "[DEFAULT]" > $HOME/.prancer/config
