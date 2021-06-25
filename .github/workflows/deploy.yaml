@@ -52,17 +52,15 @@ jobs:
           # Get the token
           prutil -u ${{ secrets.username }} -p "${{ secrets.password }}" -l
           # Crawl the collection
-          # prutil -c Test_IaC_Helm
-          # sleep 10
+          prutil -c Test_IaC_Helm
+          sleep 10
           # Run the compliance for the collection
-          # prutil -t Test_IaC_Helm
-          # sleep 10
-          # prutil -r Test_IaC_Helm > /tmp/results
-          # val=`grep failed /tmp/results`
-          # if [ ! -z $val ]; then
-          #    return 1
-          # else
-          #    return 0
-          # fi
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          prutil -t Test_IaC_Helm
+          sleep 10
+          prutil -r Test_IaC_Helm > /tmp/results
+          val=`grep failed /tmp/results`
+          if [ ! -z $val ]; then
+             return 1
+          else
+             return 0
+          fi
