@@ -57,7 +57,7 @@ jobs:
           if [ ! -z $val ]; then
              return 1
           else
-             return o
+             return 0
           fi
           echo Add other actions to build,
           echo test, and deploy your project.
