@@ -50,7 +50,7 @@ jobs:
           export ENTCLI_KEY=${{ secrets.username }}
           export ENTCLI_SECRET='${{ secrets.password }}'
           # Get the token
-          prutil -l
+          prutil -u ${{ secrets.username }} -p "${{ secrets.password }}" -l
           # Crawl the collection
           # prutil -c Test_IaC_Helm
           # sleep 10
