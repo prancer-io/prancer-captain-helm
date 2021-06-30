@@ -60,9 +60,9 @@ jobs:
           prutil -r Test_IaC_Helm > /tmp/results
           val=`grep failed /tmp/results`
           if [ ! -z "$val" ]; then
+             # ls -l /tmp/jp
+             cat /tmp/results  |  /tmp/jp  "[?result=='failed'].{title: title, description: description}"
              echo "Test_IaC_Helm failed!"
-             ls -l /tmp/jp
-             cat /tmp/results  |  /tmp/jp  "[?result=='failed'].description"
              exit 1
           else
              echo "Test_IaC_Helm passed!"
