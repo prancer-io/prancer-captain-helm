@@ -61,7 +61,10 @@ jobs:
           val=`grep failed /tmp/results`
           if [ ! -z "$val" ]; then
              echo "Test_IaC_Helm failed!"
+             ls -l /tmp/jp
+             cat /tmp/results
              cat /tmp/results  |  /tmp/jp  "[?result=='failed'].description"
+             ls -l /usr/local/bin/jp
              exit 1
           else
              echo "Test_IaC_Helm passed!"
