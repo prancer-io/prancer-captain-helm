@@ -62,10 +62,7 @@ jobs:
           if [ ! -z "$val" ]; then
              echo "Test_IaC_Helm failed!"
              ls -l /tmp/jp
-             # cat /tmp/results
-             res=`cat /tmp/results  |  /tmp/jp  "[?result=='failed'].description"`
-             echo $res
-             # ls -l /usr/local/bin/jp
+             cat /tmp/results  |  /tmp/jp  "[?result=='failed'].description"
              exit 1
           else
              echo "Test_IaC_Helm passed!"
